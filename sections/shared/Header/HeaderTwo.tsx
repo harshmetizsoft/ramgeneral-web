@@ -94,7 +94,7 @@ const HeaderTwo = ({ menuData = [] }: { menuData?: any[] }) => {
                                                     <li><Link href="/applications/convenience-stores">Convenience Stores</Link></li>
                                                     <li><Link href="/applications/educational-institutions">Educational Institutions</Link></li>
                                                     <li><Link href="/applications/healthcare-facilities">Healthcare Facilities</Link></li>
-                                                    <li><Link href="/applications/hotels-h  ospitality">Hotels & Hospitality</Link></li>
+                                                    <li><Link href="/applications/hotels-hospitality">Hotels & Hospitality</Link></li>
                                                     <li><Link href="/applications/manufacturing-facilities">Manufacturing Facilities</Link></li>
                                                     <li><Link href="/applications/municipal-infrastructure">Municipal & Infrastructure</Link></li>
                                                     <li><Link href="/applications/offices-corporate">Offices & Corporate</Link></li>
