@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+@import "tailwindcss";
+@import "../assets/main-assets/css/bootstrap.min.css" layer(bootstrap);
+@import "../assets/main-assets/css/fontawesome.min.css" layer(template);
+@import "../assets/main-assets/css/nice-select.min.css" layer(template);
+@import "../assets/main-assets/css/remixicon.css" layer(template);
+@import "../assets/main-assets/css/slick.min.css" layer(template);
+@import "../assets/main-assets/css/style.css" layer(template);
+@import "../assets/main-assets/css/react-adjustment.css" layer(template);
+
+/* 
+  Using CSS Layers to manage mixed styling.
+*/
+
+@layer bootstrap, template, base, components, utilities;
+
+@theme {
+  --color-theme: #EA5501;
+  --color-title: #15161C;
+  --color-body: #737373;
+  
+  --font-title: "Titillium Web", sans-serif;
+  --font-body: "Archivo", sans-serif;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+@layer components {
+  .main-menu ul li.active > a,
+  .mobile-menu ul li.active > a {
+    color: var(--color-theme) !important;
+    font-weight: 700;
+    position: relative;
+  }
+
+  .cta-area-1 {
+    margin-top: 0 !important;
+  }
+  
+  /* Redesigned Services Dropdown (Sub Menu) */
+  .sub-menu {
+    position: absolute !important;
+    width: 280px !important;
+    left: 0 !important;
+    right: auto !important;
+    background: rgba(255, 255, 255, 0.98) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08) !important;
+    border-top: 3px solid var(--color-theme) !important;
+    border-radius: 0 0 12px 12px !important;
+    padding: 15px 0 !important;
+    margin: 0 !important;
+    list-style: none !important;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(15px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    z-index: 100;
+  }
+
+  .main-menu ul li:hover > .sub-menu {
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+
+  .sub-menu li {
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .sub-menu li a {
+    display: block !important;
+    padding: 10px 25px !important;
+    color: var(--color-title) !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    text-transform: none !important;
+    transition: all 0.2s ease !important;
+    border-left: 3px solid transparent !important;
+  }
+
+  .sub-menu li a:hover {
+    color: var(--color-theme) !important;
+    background: rgba(234, 85, 1, 0.05) !important;
+    border-left-color: var(--color-theme) !important;
+    padding-left: 30px !important;
+  }
+
+  /* Redesigned Applications Dropdown (2-Column Sub Menu) */
+  .apps-menu {
+    position: absolute !important;
+    width: 620px !important;
+    left: 0 !important;
+    right: auto !important;
+    background: rgba(255, 255, 255, 0.98) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08) !important;
+    border-top: 3px solid var(--color-theme) !important;
+    border-radius: 0 0 12px 12px !important;
+    padding: 20px !important;
+    margin: 0 !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px 15px !important;
+    list-style: none !important;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(15px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    z-index: 100;
+  }
+
+  .main-menu ul li:hover > .apps-menu {
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+
+  .apps-menu li {
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .apps-menu li a {
+    display: block !important;
+    padding: 8px 12px !important;
+    color: var(--color-title) !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    text-transform: none !important;
+    transition: all 0.2s ease !important;
+    border-left: 3px solid transparent !important;
+    border-radius: 4px;
+  }
+
+  .apps-menu li a:hover {
+    color: var(--color-theme) !important;
+    background: rgba(234, 85, 1, 0.05) !important;
+    border-left-color: var(--color-theme) !important;
+    padding-left: 18px !important;
+  }
+
+  /* Redesigned Products Dropdown (Mega Menu) */
+  .mega-menu {
+    position: absolute !important;
+    width: auto !important;
+    min-width: 280px !important;
+    left: 0 !important;
+    right: auto !important;
+    background: rgba(255, 255, 255, 0.98) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12) !important;
+    border-top: 3px solid var(--color-theme) !important;
+    border-radius: 0 0 12px 12px !important;
+    padding: 20px !important;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(15px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    z-index: 100;
+  }
+
+  .main-menu ul li:hover > .mega-menu {
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+
+  .mega-menu-container {
+    max-width: 100% !important;
+    display: flex !important;
+    gap: 20px !important;
+    padding: 0 !important;
+    flex-wrap: wrap !important;
+  }
+
+  .mega-menu-column {
+    flex: 1 !important;
+    min-width: 150px !important;
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .mega-menu-title {
+    color: var(--color-title) !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    margin-bottom: 12px !important;
+    border-bottom: 2px solid rgba(234, 85, 1, 0.1) !important;
+    padding-bottom: 6px !important;
+    transition: color 0.3s ease;
+  }
+
+  .mega-menu-title:hover {
+    color: var(--color-theme) !important;
+  }
+
+  .mega-menu-column ul li a {
+    color: var(--color-body) !important;
+    font-size: 14px !important;
+    padding: 6px 0 !important;
+    display: block !important;
+    transition: all 0.2s ease !important;
+  }
+
+  .mega-menu-column ul li a:hover {
+    color: var(--color-theme) !important;
+    padding-left: 5px !important;
+  }
+}
+
+@layer base {
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-body);
+  }
+}
