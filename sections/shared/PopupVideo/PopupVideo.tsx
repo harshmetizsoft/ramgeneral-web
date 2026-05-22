@@ -7,10 +7,6 @@ const PopupVideo = ({ setIsActive, isActive, setPopup, popup }: {
 }) => {
     const closePopup = () => {
         setPopup(false);
-        const iframe = document.getElementById("youtube-video") as HTMLIFrameElement | null;
-        if (iframe) {
-            iframe.src = "";
-        }
         setIsActive(false);
         document.body.style.overflow = 'unset';
     };
@@ -20,16 +16,18 @@ const PopupVideo = ({ setIsActive, isActive, setPopup, popup }: {
             onClick={closePopup}
         >
             <div className={`video-wrapper ${isActive ? 'active' : ''}`}>
-                <iframe
-                    id="youtube-video"
-                    className="video"
-                    width="100%"
-                    height="100%"
-                    src="https://www.youtube.com/embed/Mp8IXI1kzvQ?si=UQVMsmBriHPfD6Vf"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                ></iframe>
+                {popup && (
+                    <iframe
+                        id="youtube-video"
+                        className="video"
+                        width="100%"
+                        height="100%"
+                        src="https://www.youtube.com/embed/Mp8IXI1kzvQ?si=UQVMsmBriHPfD6Vf"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                    ></iframe>
+                )}
                 <button className="mfp-close" onClick={closePopup}>×
                 </button>
             </div>

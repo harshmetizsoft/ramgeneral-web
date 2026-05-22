@@ -8,10 +8,6 @@ const About = () => {
     const [isActive, setIsActive] = useState(false);
     const openPopup = () => {
         setPopup(true);
-        const iframe = document.getElementById("youtube-video") as HTMLIFrameElement | null;
-        if (iframe) {
-            iframe.src = "https://www.youtube.com/embed/Mp8IXI1kzvQ?si=UQVMsmBriHPfD6Vf";
-        }
         setIsActive(true);
         document.body.style.overflow = 'hidden';
     };

@@ -89,7 +89,7 @@ const HeaderTwo = ({ menuData = [] }: { menuData?: any[] }) => {
                                             </li>
                                             <li className={`menu-item-has-children ${isActive('/applications')}`}>
                                                 <Link href="/applications">APPLICATIONS</Link>
-                                                <ul className="apps-menu">
+                                                <ul className="sub-menu apps-menu">
                                                     <li><Link href="/applications/airports-transport-hubs">Airports & Transport Hubs</Link></li>
                                                     <li><Link href="/applications/convenience-stores">Convenience Stores</Link></li>
                                                     <li><Link href="/applications/educational-institutions">Educational Institutions</Link></li>
