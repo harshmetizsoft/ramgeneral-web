@@ -1,6 +1,3 @@
-import ContactDropdown from "~/sections/shared/ContactDropdown";
-
-
 const Contact = () => {
 
     return (
@@ -38,9 +35,9 @@ const Contact = () => {
                                                 <input
                                                     type="text"
                                                     className="form-control"
-                                                    name="name"
-                                                    id="name"
-                                                    placeholder="Your Name"
+                                                    name="business_name"
+                                                    id="business_name"
+                                                    placeholder="Business Name"
                                                 />
                                             </div>
                                         </div>
@@ -49,8 +46,8 @@ const Contact = () => {
                                                 <input
                                                     type="email"
                                                     className="form-control"
-                                                    name="email"
-                                                    id="email"
+                                                    name="email_address"
+                                                    id="email_address"
                                                     placeholder="Email Address"
                                                 />
                                             </div>
@@ -60,23 +57,34 @@ const Contact = () => {
                                                 <input
                                                     type="tel"
                                                     className="form-control"
-                                                    name="number"
-                                                    id="number"
+                                                    name="phone_number"
+                                                    id="phone_number"
                                                     placeholder="Phone Number"
                                                 />
                                             </div>
                                         </div>
 
-                                        <ContactDropdown></ContactDropdown>
+                                        <div className="col-md-6">
+                                            <div className="form-group">
+                                                <input
+                                                    type="text"
+                                                    className="form-control"
+                                                    name="zipcode"
+                                                    id="zipcode"
+                                                    placeholder="Zipcode"
+                                                />
+                                            </div>
+                                        </div>
+
                                         <div className="col-12">
                                             <div className="form-group ">
                                                 <textarea
-                                                    name="message"
-                                                    id="message"
+                                                    name="address"
+                                                    id="address"
                                                     cols={30}
                                                     rows={3}
                                                     className="form-control"
-                                                    placeholder="Message..."
+                                                    placeholder="Address"
                                                 ></textarea>
                                             </div>
                                         </div>

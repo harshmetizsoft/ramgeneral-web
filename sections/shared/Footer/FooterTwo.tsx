@@ -65,14 +65,6 @@ const FooterTwo = () => {
                                                 <Link href="/contact">Contact Us</Link>
                                             </li>
                                         </ul>
-                                        <ul className="menu">
-                                            <li>
-                                                <Link href="/contact">Privacy Policy</Link>
-                                            </li>
-                                            <li>
-                                                <Link href="/contact">Terms of Use</Link>
-                                            </li>
-                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -125,8 +117,6 @@ const FooterTwo = () => {
                             </div>
                             <div className="col-auto">
                                 <div className="footer-links">
-                                    <Link href="/contact">Terms & Condition</Link>
-                                    <Link href="/contact">Privacy Policy</Link>
                                     <Link href="/contact">Contact Us</Link>
                                 </div>
                             </div>

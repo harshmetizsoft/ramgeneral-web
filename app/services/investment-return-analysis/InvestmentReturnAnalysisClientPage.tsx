@@ -134,20 +134,6 @@ export default function InvestmentReturnAnalysisClientPage() {
                   />
                 </div>
 
-                {/* Rating Badge */}
-                <div className="flex items-center gap-3 mb-4">
-                  <span
-                    className="px-3 py-1 text-xs font-bold uppercase tracking-wider text-white rounded-lg"
-                    style={{ backgroundColor: "#EA5501" }}
-                  >
-                    Featured
-                  </span>
-                  <span className="flex items-center gap-1 text-base font-bold text-gray-700">
-                    <i className="ri-star-fill text-amber-500"></i>
-                    4.8
-                  </span>
-                </div>
-
                 {/* Main Heading */}
                 <h2 className="font-title text-4xl font-bold text-gray-900 mb-4">
                   Unlocking the Full Value of Your Lighting Investments
@@ -241,7 +227,7 @@ export default function InvestmentReturnAnalysisClientPage() {
                 <h3 className="font-title text-2xl font-bold text-gray-900 mb-20">
                   What Sets Our Lighting Investment Return Analysis Apart
                 </h3>
-                <div className="checklist style2">
+                <div>
                   <ul className="pl-0 list-none m-0">
                     {whyChooseItems.map((item, idx) => (
                       <li key={idx} className="flex items-start gap-2 mb-3 text-gray-700 font-body text-base">
@@ -261,22 +247,31 @@ export default function InvestmentReturnAnalysisClientPage() {
                 <div className="accordion" id="faqAccordion2">
                   {faqItems.map((item, idx) => (
                     <div className={`accordion-card ${activeFaq === idx ? "active" : ""}`} key={idx}>
-                      <div className="accordion-header">
-                        <button
-                          className={`accordion-button ${activeFaq === idx ? "" : "collapsed"}`}
-                          type="button"
-                          onClick={() => setActiveFaq(activeFaq === idx ? null : idx)}
-                        >
-                          {item.q}
-                        </button>
-                      </div>
-                      <div className={`accordion-collapse collapse ${activeFaq === idx ? "show" : ""}`}>
-                        <div className="accordion-body">
-                          <p className="m-0 text-gray-600 font-body text-sm leading-relaxed whitespace-pre-line">
-                            {item.a}
-                          </p>
-                        </div>
-                      </div>
+                      {(() => {
+                        const isOpen = activeFaq === idx;
+                        return (
+                          <>
+                            <div className="accordion-header">
+                              <button
+                                className={`accordion-button ${isOpen ? "" : "collapsed"}`}
+                                type="button"
+                                onClick={() => setActiveFaq(isOpen ? null : idx)}
+                              >
+                                {item.q}
+                              </button>
+                            </div>
+                            {isOpen && (
+                              <div className="accordion-collapse">
+                                <div className="accordion-body">
+                                  <p className="m-0 text-gray-600 font-body text-sm leading-relaxed whitespace-pre-line">
+                                    {item.a}
+                                  </p>
+                                </div>
+                              </div>
+                            )}
+                          </>
+                        );
+                      })()}
                     </div>
                   ))}
                 </div>
@@ -286,19 +281,6 @@ export default function InvestmentReturnAnalysisClientPage() {
             {/* Right Column: Sidebar */}
             <div className="col-xl-4 col-12">
               <div className="space-y-6">
-                {/* Stats Card */}
-                <div
-                  className="p-6 rounded-3xl text-white shadow-xl text-center flex flex-col justify-center items-center"
-                  style={{ background: "linear-gradient(135deg, #FF6B35 0%, #EA5501 100%)", borderRadius: "24px" }}
-                >
-                  <span className="text-5xl font-extrabold font-title tracking-tight mb-2">
-                    18mo
-                  </span>
-                  <p className="text-sm font-medium opacity-90 m-0">
-                    Average Complete Payback Period Achieved
-                  </p>
-                </div>
-
                 {/* Core Features list card */}
                 <div className="p-6 bg-gray-50 border rounded-3xl" style={{ borderRadius: "24px", borderColor: "rgba(0,0,0,0.05)" }}>
                   <h4 className="font-title text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">

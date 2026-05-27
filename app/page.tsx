@@ -6,7 +6,6 @@ import Counter from "~/sections/home/Counter";
 import Hero from "~/sections/home/Hero";
 import Portfolio from "~/sections/home/Portfolio";
 import Process from "~/sections/home/Process";
-import Team from "~/sections/home/Team";
 import Testimonial from "~/sections/home/Testimonial";
 import WhyChoose from "~/sections/home/WhyChoose";
 import Scroll from "~/sections/shared/Scroll";
@@ -23,7 +22,6 @@ export default function HomePage() {
             <Contact />
             <Testimonial />
             <Client />
-            <Team />
             <CTA />
             <Scroll />
         </div>

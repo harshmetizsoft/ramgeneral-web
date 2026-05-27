@@ -48,8 +48,8 @@
     margin-top: 0 !important;
   }
   
-  /* Redesigned Services Dropdown (Sub Menu) */
-  .sub-menu {
+  /* Desktop header dropdowns only — do not target .mobile-menu .sub-menu */
+  .main-menu ul.sub-menu {
     position: absolute !important;
     width: 280px !important;
     left: 0 !important;
@@ -75,13 +75,13 @@
     transform: translateY(0) !important;
   }
 
-  .sub-menu li {
+  .main-menu ul.sub-menu li {
     width: 100% !important;
     padding: 0 !important;
     margin: 0 !important;
   }
 
-  .sub-menu li a {
+  .main-menu ul.sub-menu li a {
     display: block !important;
     position: relative !important;
     padding: 10px 25px !important;
@@ -93,7 +93,7 @@
     border-left: 3px solid transparent !important;
   }
 
-  .sub-menu li a:before {
+  .main-menu ul.sub-menu li a:before {
     content: "\ea6e" !important;
     position: absolute !important;
     top: 0 !important;
@@ -110,20 +110,138 @@
     transition: all 0.2s ease !important;
   }
 
-  .sub-menu li a:hover {
+  .main-menu ul.sub-menu li a:hover {
     color: var(--color-theme) !important;
     background: rgba(234, 85, 1, 0.05) !important;
     border-left-color: var(--color-theme) !important;
     padding-left: 32px !important;
   }
 
-  .sub-menu li a:hover:before {
+  .main-menu ul.sub-menu li a:hover:before {
     opacity: 1 !important;
     left: 12px !important;
   }
 
+  /* Mobile drawer submenus */
+  .mobile-menu ul.sub-menu {
+    position: static !important;
+    width: 100% !important;
+    left: auto !important;
+    right: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    border-top: 1px solid #fdedf1 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    list-style: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    max-height: 0 !important;
+    overflow: hidden !important;
+    transform: none !important;
+    transition: max-height 0.35s ease, opacity 0.25s ease !important;
+    z-index: auto !important;
+    display: block !important;
+  }
+
+  .mobile-menu ul.sub-menu.menu-open {
+    visibility: visible !important;
+    opacity: 1 !important;
+    max-height: 3000px !important;
+    overflow: visible !important;
+  }
+
+  .mobile-menu ul.sub-menu li {
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border-bottom: 1px solid #fdedf1 !important;
+  }
+
+  .mobile-menu ul.sub-menu li a {
+    display: block !important;
+    position: relative !important;
+    padding: 10px 0 10px 12px !important;
+    color: var(--color-title) !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    text-transform: capitalize !important;
+    border-left: none !important;
+    background: transparent !important;
+  }
+
+  .mobile-menu ul.sub-menu li a:before {
+    content: none !important;
+    display: none !important;
+  }
+
+  .mobile-menu ul.sub-menu li a:hover {
+    color: var(--color-theme) !important;
+    padding-left: 12px !important;
+    background: transparent !important;
+  }
+
+  .mobile-menu ul.sub-menu .sub-menu {
+    border-top: none !important;
+    margin-left: 12px !important;
+  }
+
+  .mobile-menu ul.sub-menu .sub-menu li a {
+    font-size: 14px !important;
+    padding-left: 8px !important;
+  }
+
+  .mobile-menu .mobile-nav-toggle {
+    display: block;
+    width: 100%;
+    position: relative;
+    padding: 12px 36px 12px 0;
+    line-height: 1.4;
+    font-size: 16px;
+    text-transform: capitalize;
+    color: var(--title-color);
+    background: transparent;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    font-family: var(--font-body);
+  }
+
+  .mobile-menu li.active-class > .mobile-nav-toggle {
+    color: var(--color-theme);
+  }
+
+  .mobile-menu ul .submenu-item-has-children > .mobile-nav-toggle .mean-expand-class {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 100%;
+    height: 100%;
+    line-height: 25px;
+    margin-top: -12.5px;
+    display: inline-block;
+    text-align: end;
+    pointer-events: none;
+  }
+
+  .mobile-menu ul .submenu-item-has-children > .mobile-nav-toggle .mean-expand-class:before {
+    content: "\ea4e";
+    font-family: var(--icon-font);
+    font-weight: 400;
+    font-size: 18px;
+  }
+
+  .mobile-menu ul .submenu-item-has-children.active-class > .mobile-nav-toggle .mean-expand-class:before {
+    content: "\ea78";
+  }
+
   /* Redesigned Applications Dropdown (2-Column Sub Menu) */
-  .apps-menu {
+  .main-menu ul.sub-menu.apps-menu {
     width: 620px !important;
     padding: 20px !important;
     display: grid !important;
@@ -131,7 +249,7 @@
     gap: 8px 15px !important;
   }
 
-  .apps-menu li a {
+  .main-menu ul.sub-menu.apps-menu li a {
     border-radius: 4px;
   }
 
@@ -202,6 +320,181 @@
   .mega-menu-column ul li a:hover {
     color: var(--color-theme) !important;
     padding-left: 5px !important;
+  }
+
+  /* About page */
+  .bg-smoke {
+    background-color: #f8f8f8;
+  }
+
+  .about-process-step {
+    padding: 28px 24px;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 8px;
+  }
+
+  .about-process-step__number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    font-family: var(--font-title);
+    color: var(--color-theme);
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+
+  .about-process-step__title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    font-family: var(--font-title);
+    margin-bottom: 12px;
+    color: var(--color-title);
+  }
+
+  .about-process-step__text {
+    color: var(--color-body);
+    line-height: 1.6;
+  }
+
+  .about-service-card {
+    background: #fff;
+    padding: 28px 24px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    transition: box-shadow 0.25s ease;
+  }
+
+  .about-service-card:hover {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+  }
+
+  .about-service-card__head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+
+  .about-service-card__number {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: rgba(234, 85, 1, 0.25);
+    font-family: var(--font-title);
+  }
+
+  .about-service-card__icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .about-service-card__category {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--color-theme);
+    margin-bottom: 8px;
+  }
+
+  .about-service-card__title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-family: var(--font-title);
+    color: var(--color-title);
+    margin-bottom: 12px;
+  }
+
+  .about-service-card__text {
+    color: var(--color-body);
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  .about-service-card__link {
+    color: var(--color-theme);
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .about-team-card {
+    padding: 20px;
+  }
+
+  .about-team-card__img {
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+
+  .about-team-card__img img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+
+  .about-team-card__name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    font-family: var(--font-title);
+    color: var(--color-title);
+    margin-bottom: 8px;
+  }
+
+  .about-team-card__role {
+    color: var(--color-body);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .about-why-thumb img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+  }
+
+  .about-why-feature {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .about-why-feature__icon {
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .about-why-feature__icon img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .about-why-feature__title {
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: var(--font-title);
+    color: var(--color-title);
+  }
+
+  .about-gallery-slide {
+    padding: 0 8px;
+  }
+
+  .about-gallery-slide img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
   }
 }
 

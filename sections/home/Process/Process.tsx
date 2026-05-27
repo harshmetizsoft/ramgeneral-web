@@ -22,7 +22,7 @@ const Process = () => {
                                 <div className="process-grid-number">01</div>
                                 <div className="process-grid-details">
                                     <h3 className="process-grid-title">Request Audit</h3>
-                                    <p className="process-grid-text">Unlock smarter lighting solutions with a comprehensive audit that identifies energy savings and efficiency opportunities tailored to your space.</p>
+                                    <p className="process-grid-text">Comprehensive audit that identifies energy savings and efficiency opportunities tailored to your space.</p>
                                 </div>
                             </div>
                             <div className="process-grid">

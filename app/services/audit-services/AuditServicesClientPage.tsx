@@ -61,23 +61,23 @@ const whyChooseItems = [
 const faqItems = [
   {
     q: "Q1. How can a lighting audit save my business money?",
-    a: "A lighting audit identifies inefficiencies in your current lighting system, allowing us to recommend upgrades, like switching to energy-efficient LEDs. This leads to lower energy consumption, reduced maintenance costs, and long-term savings on electricity bills."
+    a: "A lighting audit identifies inefficiencies in your current lighting system, allowing us to recommend upgrades, like switching to energy-efficient LEDs. This leads to lower energy consumption, reduced maintenance costs, and long-term savings on electricity bills.",
   },
   {
     q: "Q2. How do you determine which lighting upgrades are right for my business?",
-    a: "Our experts consider your business goals, energy savings targets, and the specific needs of your space. We then analyze your existing setup and provide recommendations based on your operational requirements, budget, and desired outcomes."
+    a: "Our experts consider your business goals, energy savings targets, and the specific needs of your space. We then analyze your existing setup and provide recommendations based on your operational requirements, budget, and desired outcomes.",
   },
   {
     q: "Q3. How do I know if my lighting system is inefficient?",
-    a: "If your lighting is outdated, frequently requires maintenance, or doesn't provide adequate illumination, it may be time for an audit. High energy bills and poor lighting quality are also indicators that your system could benefit from an upgrade."
+    a: "If your lighting is outdated, frequently requires maintenance, or doesn’t provide adequate illumination, it may be time for an audit. High energy bills and poor lighting quality are also indicators that your system could benefit from an upgrade.",
   },
   {
     q: "Q4. What will the lighting audit report include?",
-    a: "The audit report provides a detailed analysis of your existing lighting system, including an overview of current energy usage, fixture performance, light levels, and areas for improvement. It also includes tailored recommendations for cost-effective upgrades and projected savings."
+    a: "The audit report provides a detailed analysis of your existing lighting system, including an overview of current energy usage, fixture performance, light levels, and areas for improvement. It also includes tailored recommendations for cost-effective upgrades and projected savings.",
   },
   {
     q: "Q5. How much energy can I save with a lighting audit?",
-    a: "Savings vary based on your facility's current system, but businesses can typically save between 30-60% on energy costs after implementing the recommended changes, such as upgrading to LEDs or improving fixture placement."
+    a: "Savings vary based on your facility's current system, but businesses can typically save between 30-60% on energy costs after implementing the recommended changes, such as upgrading to LEDs or improving fixture placement.",
   }
 ];
 
@@ -233,7 +233,7 @@ export default function AuditServicesClientPage() {
               {/* Why Choose Section */}
               <div className="mt-50 mb-40">
                 <h3 className="font-title text-2xl font-bold text-gray-900 mb-20">Why Choose Our Lighting Audits</h3>
-                <div className="checklist style2">
+                <div>
                   <ul className="pl-0 list-none m-0">
                     {whyChooseItems.map((item, idx) => (
                       <li key={idx} className="flex items-start gap-2 mb-3 text-gray-700 font-body text-base">
@@ -251,20 +251,33 @@ export default function AuditServicesClientPage() {
                 <div className="accordion" id="faqAccordion2">
                   {faqItems.map((item, idx) => (
                     <div className={`accordion-card ${activeFaq === idx ? "active" : ""}`} key={idx}>
-                      <div className="accordion-header">
-                        <button 
-                          className={`accordion-button ${activeFaq === idx ? "" : "collapsed"}`} 
-                          type="button"
-                          onClick={() => setActiveFaq(activeFaq === idx ? null : idx)}
-                        >
-                          {item.q}
-                        </button>
-                      </div>
-                      <div className={`accordion-collapse collapse ${activeFaq === idx ? "show" : ""}`}>
-                        <div className="accordion-body">
-                          <p className="m-0 text-gray-600 font-body text-sm leading-relaxed">{item.a}</p>
-                        </div>
-                      </div>
+                      {(() => {
+                        const isOpen = activeFaq === idx;
+                        return (
+                          <>
+                            <div className="accordion-header">
+                              <button
+                                className={`accordion-button ${isOpen ? "" : "collapsed"}`}
+                                type="button"
+                                onClick={() =>
+                                  setActiveFaq(isOpen ? null : idx)
+                                }
+                              >
+                                {item.q}
+                              </button>
+                            </div>
+                            {isOpen && (
+                              <div className="accordion-collapse">
+                                <div className="accordion-body">
+                                  <p className="m-0 text-gray-600 font-body text-sm leading-relaxed">
+                                    {item.a}
+                                  </p>
+                                </div>
+                              </div>
+                            )}
+                          </>
+                        );
+                      })()}
                     </div>
                   ))}
                 </div>

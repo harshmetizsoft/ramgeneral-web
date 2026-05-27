@@ -1,138 +1,67 @@
-import Link from "next/link";
+const teamMembers = [
+  {
+    name: "John Simon",
+    role: "Best Technician of Office Repair and Maintenance",
+    image: "/main-assets/img/about-page/team_1_1.jpg",
+  },
+  {
+    name: "Michel Jack",
+    role: "Best Technician of Home Service and Maintenance",
+    image: "/main-assets/img/about-page/team_1_2.jpg",
+  },
+  {
+    name: "Mackolin Smith",
+    role: "Best Technician of AC Installation and Maintenance",
+    image: "/main-assets/img/about-page/team_1_3.jpg",
+  },
+  {
+    name: "Ralph Edwards",
+    role: "Best Technician of Home Service and Maintenance",
+    image: "/main-assets/img/about-page/team_1_4.jpg",
+  },
+  {
+    name: "Guy Hawkins",
+    role: "Best Technician of AC Installation and Maintenance",
+    image: "/main-assets/img/about-page/team_1_5.jpg",
+  },
+  {
+    name: "Jacob Jones",
+    role: "Best Technician of Home Service and Maintenance",
+    image: "/main-assets/img/about-page/team_1_6.jpg",
+  },
+];
 
 const TeamThree = () => {
   return (
     <div className="team-area-1 space shape-mockup-wrap">
       <div
         className="section-animation-shape1-1 shape-mockup animation-infinite background-image"
-        style={{ backgroundImage: "url('/main-assets/img/shape/global-line-shape2.png')", bottom: '0px' }}
+        style={{
+          backgroundImage: "url('/main-assets/img/shape/global-line-shape2.png')",
+          bottom: "0px",
+        }}
       ></div>
       <div className="container">
-        <div className="row justify-content-between align-items-center">
-          <div className="col-lg-7 col-md-7">
-            <div className="title-area content-text-extra-style">
-              <span className="sub-title">
-                <img src="/main-assets/img/icon/section-subtitle-icon.svg" alt="img" />
-                Our Team
-              </span>
-              <h2 className="sec-title">Meet our leadership</h2>
-            </div>
-          </div>
-          <div className="col-md-auto">
-            <div className="sec-btn">
-              <Link href="/about" className="btn">
-                View All Members <i className="ri-arrow-right-up-line"></i>
-              </Link>
-            </div>
-          </div>
+        <div className="title-area text-center mb-50">
+          <span className="sub-title">
+            <img src="/main-assets/img/icon/section-subtitle-icon.svg" alt="" />
+            Team Members
+          </span>
+          <h2 className="sec-title">Our Dedicated Team</h2>
         </div>
 
         <div className="row gy-30 justify-content-center">
-          <div className="col-lg-4 col-md-6">
-            <div
-              className="team-card"
-              style={{ backgroundImage: "url('/main-assets/img/bg/team-card-bg1-1.png')" }}
-            >
-              <div className="team-card_content max-width-reset-team">
-                <h4 className="team-card_title">
-                  <Link href="/team-details">Penelopa Miller</Link>
-                </h4>
-                <span className="team-card_desig">Head of Production</span>
-                <div className="team-social_wrap">
-                  <div className="social-btn">
-                    <Link href="https://facebook.com/">
-                      <i className="ri-facebook-fill"></i>
-                    </Link>
-                    <Link href="https://www.twitter.com/">
-                      <i className="ri-twitter-x-line"></i>
-                    </Link>
-                    <Link href="https://instagram.com/">
-                      <i className="ri-instagram-line"></i>
-                    </Link>
-                  </div>
+          {teamMembers.map((member) => (
+            <div className="col-xl-4 col-lg-4 col-md-6" key={member.name}>
+              <div className="about-team-card text-center h-100">
+                <div className="about-team-card__img">
+                  <img src={member.image} alt={member.name} />
                 </div>
+                <h3 className="about-team-card__name">{member.name}</h3>
+                <p className="about-team-card__role mb-0">{member.role}</p>
               </div>
-              <div className="team-card_img team-card-white-space-none">
-                <img src="/main-assets/img/team/team-1-1.png" alt="img" />
-              </div>
-              <Link href="tel:0023745671379" className="contact-btn-wrap">
-                <span className="number">(+00) 347 456 1379</span>
-                <div className="icon-btn">
-                  <i className="ri-phone-fill"></i>
-                </div>
-              </Link>
             </div>
-          </div>
-          <div className="col-lg-4 col-md-6">
-            <div
-              className="team-card"
-              style={{ backgroundImage: "url('/main-assets/img/bg/team-card-bg1-1.png')" }}
-            >
-              <div className="team-card_content max-width-reset-team">
-                <h4 className="team-card_title">
-                  <Link href="/team-details">Mark Ronaldo</Link>
-                </h4>
-                <span className="team-card_desig">Sr. Engineer</span>
-                <div className="team-social_wrap">
-                  <div className="social-btn">
-                    <Link href="https://facebook.com/">
-                      <i className="ri-facebook-fill"></i>
-                    </Link>
-                    <Link href="https://www.twitter.com/">
-                      <i className="ri-twitter-x-line"></i>
-                    </Link>
-                    <Link href="https://instagram.com/">
-                      <i className="ri-instagram-line"></i>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-              <div className="team-card_img team-card-white-space-none">
-                <img src="/main-assets/img/team/team-1-2.png" alt="img" />
-              </div>
-              <Link href="tel:0023745671379" className="contact-btn-wrap">
-                <span className="number">(+00) 347 456 1379</span>
-                <div className="icon-btn">
-                  <i className="ri-phone-fill"></i>
-                </div>
-              </Link>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6">
-            <div
-              className="team-card"
-              style={{ backgroundImage: "url('/main-assets/img/bg/team-card-bg1-1.png')" }}
-            >
-              <div className="team-card_content max-width-reset-team">
-                <h4 className="team-card_title">
-                  <Link href="/team-details">John Maxwell</Link>
-                </h4>
-                <span className="team-card_desig">Project Management</span>
-                <div className="team-social_wrap">
-                  <div className="social-btn">
-                    <Link href="https://facebook.com/">
-                      <i className="ri-facebook-fill"></i>
-                    </Link>
-                    <Link href="https://www.twitter.com/">
-                      <i className="ri-twitter-x-line"></i>
-                    </Link>
-                    <Link href="https://instagram.com/">
-                      <i className="ri-instagram-line"></i>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-              <div className="team-card_img team-card-white-space-none">
-                <img src="/main-assets/img/team/team-1-3.png" alt="img" />
-              </div>
-              <Link href="tel:0023745671379" className="contact-btn-wrap">
-                <span className="number">(+00) 347 456 1379</span>
-                <div className="icon-btn">
-                  <i className="ri-phone-fill"></i>
-                </div>
-              </Link>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>
@@ -140,4 +69,3 @@ const TeamThree = () => {
 };
 
 export default TeamThree;
-

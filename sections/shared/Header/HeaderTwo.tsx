@@ -79,12 +79,12 @@ const HeaderTwo = ({ menuData = [] }: { menuData?: any[] }) => {
                                             <li className={`menu-item-has-children ${isActive('/services')}`}>
                                                 <Link href="/services">SERVICES</Link>
                                                 <ul className="sub-menu">
-                                                    <li><Link href="/services/audit-services">Audit Services</Link></li>
-                                                    <li><Link href="/services/layout-planning">Layout Planning</Link></li>
-                                                    <li><Link href="/services/project-management">Project Management</Link></li>
-                                                    <li><Link href="/services/installation-services">Installation Services</Link></li>
-                                                    <li><Link href="/services/investment-return-analysis">Investment Return Analysis</Link></li>
-                                                    <li><Link href="/services/as-a-service">As A Service</Link></li>
+                                                    <li><Link href="/services/audit-services">Lighting Audit Services</Link></li>
+                                                    <li><Link href="/services/layout-planning">Lighting Layout Planning</Link></li>
+                                                    <li><Link href="/services/project-management">Lighting Project Management</Link></li>
+                                                    <li><Link href="/services/installation-services">Lighting Installation Services</Link></li>
+                                                    <li><Link href="/services/investment-return-analysis">Lighting Investment Return Analysis</Link></li>
+                                                    <li><Link href="/services/as-a-service">Lighting As A Service</Link></li>
                                                 </ul>
                                             </li>
                                             <li className={`menu-item-has-children ${isActive('/applications')}`}>
@@ -122,6 +122,9 @@ const HeaderTwo = ({ menuData = [] }: { menuData?: any[] }) => {
                                                         ))}
                                                     </div>
                                                 </ul>
+                                            </li>
+                                            <li className={isActive('/rebates-incentives')}>
+                                                <Link href="/rebates-incentives">REBATES & INCENTIVES</Link>
                                             </li>
                                             <li className={isActive('/contact')}>
                                                 <Link href="/contact">CONTACT US</Link>

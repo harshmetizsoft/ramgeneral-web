@@ -129,11 +129,6 @@ const Portfolio = () => {
                             <h2 className="sec-title">Explore recent projects</h2>
                         </div>
                     </div>
-                    <div className="col-lg-auto">
-                        <div className="sec-btn">
-                            <Link href="/project" className="btn">View All Projects <i className="ri-arrow-right-up-line"></i></Link>
-                        </div>
-                    </div>
                 </div>
                 <div className="portfolio-slider3 overflow-hidden">
                     <Slider {...settings} className="row gy-30 gx-30 global-carousel custom-carousel">

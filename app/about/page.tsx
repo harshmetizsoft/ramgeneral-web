@@ -1,29 +1,27 @@
 import AboutThree from "~/sections/about_page/AboutThree";
+import AboutServices from "~/sections/about_page/AboutServices";
+import AboutGallery from "~/sections/about_page/AboutGallery";
 import Breadcumb from "~/sections/about_page/Breadcumb";
 import ClientThree from "~/sections/about_page/ClientThree";
-import ProcessThree from "~/sections/about_page/ProcessThree";
-import TeamThree from "~/sections/about_page/TeamThree/TeamThree";
 import WhyChooseThree from "~/sections/about_page/WhyChooseThree";
-import CounterThree from "~/sections/shared/Counter/CounterThree";
-import TestimonialThree from "~/sections/shared/Testimonial/TestimonialThree";
 import Scroll from "~/sections/shared/Scroll";
-import Portfolio from "~/sections/home/Portfolio-Home-1";
+
+export const metadata = {
+  title: "About Us | RAM General Supply",
+  description:
+    "Proudly delivering premium LED lighting services—expert installation, rebate management, and energy-saving solutions for businesses.",
+};
+
 export default function AboutPage() {
   return (
     <>
-            <Breadcumb />
+      <Breadcumb />
       <AboutThree />
+      <AboutServices />
       <WhyChooseThree />
-      <ProcessThree />
-      <Portfolio />
-      <CounterThree />
-      <TestimonialThree />
-      <TeamThree />
+      <AboutGallery />
       <ClientThree />
-            <Scroll />
+      <Scroll />
     </>
   );
 }
-
-
-

@@ -3,6 +3,15 @@
 import Link from "next/link";
 import Slider from "react-slick";
 
+const clientLogos = [
+  "/main-assets/img/about-page/brand_2_1.svg",
+  "/main-assets/img/about-page/brand_2_2.svg",
+  "/main-assets/img/about-page/brand_2_3.svg",
+  "/main-assets/img/about-page/brand_2_4.svg",
+  "/main-assets/img/about-page/brand_2_5.svg",
+  "/main-assets/img/about-page/brand_2_6.svg",
+];
+
 const Client = () => {
     const settings = {
         infinite: true,
@@ -29,76 +38,15 @@ const Client = () => {
                     {...settings}
                     className="row global-carousel client-slider2"
                 >
-                    <div className="col-lg-auto">
-                        <div className="client-logo">
-                            <Link href="/pages/homepage/home-1">
-                                <img src="/main-assets/img/client/client-2-1.svg" alt="img" />
-                            </Link>
+                    {clientLogos.map((logo, idx) => (
+                        <div className="col-lg-auto" key={idx}>
+                            <div className="client-logo">
+                                <Link href="/">
+                                    <img src={logo} alt={`Trusted client ${idx + 1}`} />
+                                </Link>
+                            </div>
                         </div>
-                    </div>
-                    <div className="col-lg-auto">
-                        <div className="client-logo">
-                            <Link href="/pages/homepage/home-1">
-                                <img src="/main-assets/img/client/client-2-2.svg" alt="img" />
-                            </Link>
-                        </div>
-                    </div>
-                    <div className="col-lg-auto">
-                        <div className="client-logo">
-                            <Link href="/pages/homepage/home-1">
-                                <img src="/main-assets/img/client/client-2-3.svg" alt="img" />
-                            </Link>
-                        </div>
-                    </div>
-                    <div className="col-lg-auto">
-                        <div className="client-logo">
-                            <Link href="/pages/homepage/home-1">
-                                <img src="/main-assets/img/client/client-2-4.svg" alt="img" />
-                            </Link>
-                        </div>
-                    </div>
-                    <div className="col-lg-auto">
-                        <div className="client-logo">
-                            <Link href="/pages/homepage/home-1">
-                                <img src="/main-assets/img/client/client-2-5.svg" alt="img" />
-                            </Link>
-                        </div>
-                    </div>
-                    <div className="col-lg-auto">
-                        <div className="client-logo">
-                            <Link href="/pages/homepage/home-1">
-                                <img src="/main-assets/img/client/client-2-1.svg" alt="img" />
-                            </Link>
-                        </div>
-                    </div>
-                    <div className="col-lg-auto">
-                        <div className="client-logo">
-                            <Link href="/pages/homepage/home-1">
-                                <img src="/main-assets/img/client/client-2-2.svg" alt="img" />
-                            </Link>
-                        </div>
-                    </div>
-                    <div className="col-lg-auto">
-                        <div className="client-logo">
-                            <Link href="/pages/homepage/home-1">
-                                <img src="/main-assets/img/client/client-2-3.svg" alt="img" />
-                            </Link>
-                        </div>
-                    </div>
-                    <div className="col-lg-auto">
-                        <div className="client-logo">
-                            <Link href="/pages/homepage/home-1">
-                                <img src="/main-assets/img/client/client-2-4.svg" alt="img" />
-                            </Link>
-                        </div>
-                    </div>
-                    <div className="col-lg-auto">
-                        <div className="client-logo">
-                            <Link href="/pages/homepage/home-1">
-                                <img src="/main-assets/img/client/client-2-5.svg" alt="img" />
-                            </Link>
-                        </div>
-                    </div>
+                    ))}
                 </Slider>
             </div>
         </div>

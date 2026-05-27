@@ -1,102 +1,71 @@
-/* eslint-disable react/no-unescaped-entities */
+import Link from "next/link";
+
+const features = [
+  {
+    icon: "/main-assets/img/about-page/choose_feature_1.svg",
+    title: "Certified LED Specialists",
+  },
+  {
+    icon: "/main-assets/img/about-page/choose_feature_2.svg",
+    title: "Sustainable Lighting Solutions",
+  },
+  {
+    icon: "/main-assets/img/about-page/choose_feature_3.svg",
+    title: "Expert Assistance",
+  },
+  {
+    icon: "/main-assets/img/about-page/choose_feature_4.svg",
+    title: "On-Time, Every Time",
+  },
+];
+
 const WhyChooseThree = () => {
   return (
-    <div className="space-top text-center overflow-hidden shape-mockup-wrap">
-      <div className="section-animation-shape1-1 shape-mockup animation-infinite background-image" style={{ backgroundImage: "url('/main-assets/img/shape/global-line-shape2.png')", bottom: '0px' }}>
-      </div>
+    <div className="space-top space-bottom overflow-hidden shape-mockup-wrap">
+      <div
+        className="section-animation-shape1-1 shape-mockup animation-infinite background-image"
+        style={{
+          backgroundImage: "url('/main-assets/img/shape/global-line-shape2.png')",
+          bottom: "0px",
+        }}
+      ></div>
       <div className="container">
-        <div className="title-area text-center">
-          <div className="shadow-title">Why Choose Us</div>
-          <span className="sub-title">
-            <img src="/main-assets/img/icon/section-subtitle-icon.svg" alt="img" />
-            Why Choose Us
-          </span>
-          <h2 className="sec-title">High Quality Innovate Design</h2>
-        </div>
-        <div className="row gy-50 align-items-center">
-          <div className="col-xl-4 col-md-6">
-            <div className="wcu-card-wrap left-align">
-              <div className="wcu-card">
-                <div className="wcu-card-icon">
-                  <img src="/main-assets/img/icon/why-icon1-1.svg" alt="img" />
-                </div>
-                <div className="wcu-card-details">
-                  <h4 className="wcu-card-title">Technology</h4>
-                  <p className="wcu-card-text">
-                    We are expert your all work is very nice waiting for next
-                    project.
-                  </p>
-                </div>
-              </div>
-              <div className="wcu-card">
-                <div className="wcu-card-icon">
-                  <img src="/main-assets/img/icon/why-icon1-2.svg" alt="img" />
-                </div>
-                <div className="wcu-card-details">
-                  <h4 className="wcu-card-title">Core Planning</h4>
-                  <p className="wcu-card-text">
-                    All the Lorem Ipsum generators on the Internet tend to
-                    repeat predefined
-                  </p>
-                </div>
-              </div>
-              <div className="wcu-card">
-                <div className="wcu-card-icon">
-                  <img src="/main-assets/img/icon/why-icon1-3.svg" alt="img" />
-                </div>
-                <div className="wcu-card-details">
-                  <h4 className="wcu-card-title">Project Result</h4>
-                  <p className="wcu-card-text">
-                    Making this the first true generator on the Internet uses a
-                    dictionary
-                  </p>
-                </div>
-              </div>
+        <div className="row gx-60 align-items-center">
+          <div className="col-lg-6 mb-40 mb-lg-0">
+            <div className="about-why-thumb">
+              <img src="/main-assets/img/about-page/why_1.jpg" alt="Why choose RAM General Supply" />
             </div>
           </div>
-          <div className="col-xl-4 col-md-6 order-xl-3">
-            <div className="wcu-card-wrap right-align">
-              <div className="wcu-card">
-                <div className="wcu-card-icon">
-                  <img src="/main-assets/img/icon/why-icon1-4.svg" alt="img" />
-                </div>
-                <div className="wcu-card-details">
-                  <h4 className="wcu-card-title">Trusted Clients</h4>
-                  <p className="wcu-card-text">
-                    Passage of Lorem Ipsum, you need to be sure there isn't
-                    anything
-                  </p>
-                </div>
-              </div>
-              <div className="wcu-card">
-                <div className="wcu-card-icon">
-                  <img src="/main-assets/img/icon/why-icon1-5.svg" alt="img" />
-                </div>
-                <div className="wcu-card-details">
-                  <h4 className="wcu-card-title">Skilled Team</h4>
-                  <p className="wcu-card-text">
-                    We are expert your all work is very nice waiting for next
-                    project.
-                  </p>
-                </div>
-              </div>
-              <div className="wcu-card">
-                <div className="wcu-card-icon">
-                  <img src="/main-assets/img/icon/why-icon1-6.svg" alt="img" />
-                </div>
-                <div className="wcu-card-details">
-                  <h4 className="wcu-card-title">Save Money</h4>
-                  <p className="wcu-card-text">
-                    We are expert your all work is very nice waiting for next
-                    project.
-                  </p>
-                </div>
-              </div>
+          <div className="col-lg-6">
+            <div className="title-area mb-30">
+              <span className="sub-title">
+                <img src="/main-assets/img/icon/section-subtitle-icon.svg" alt="" />
+                Why Choose Us
+              </span>
+              <h2 className="sec-title">Why You Choose Our Services</h2>
+              <p className="sec-text">
+                With a focus on precision and excellence, our lighting services are designed to meet
+                your unique needs. From expert installations to seamless rebate management and ongoing
+                support, we provide comprehensive solutions that drive efficiency, sustainability,
+                and long-term value for your business.
+              </p>
             </div>
-          </div>
-          <div className="col-xl-4">
-            <div className="wcu-thumb1-1">
-              <img src="/main-assets/img/normal/why_1-1.png" alt="img" />
+            <div className="row gy-20">
+              {features.map((feature) => (
+                <div className="col-sm-6" key={feature.title}>
+                  <div className="about-why-feature">
+                    <div className="about-why-feature__icon">
+                      <img src={feature.icon} alt="" />
+                    </div>
+                    <h4 className="about-why-feature__title mb-0">{feature.title}</h4>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="btn-group mt-40">
+              <Link href="/contact" className="btn style3">
+                Get Started Today <i className="ri-arrow-right-up-line"></i>
+              </Link>
             </div>
           </div>
         </div>
@@ -106,5 +75,3 @@ const WhyChooseThree = () => {
 };
 
 export default WhyChooseThree;
-
-
