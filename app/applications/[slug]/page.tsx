@@ -565,13 +565,14 @@ export default async function ApplicationDetailPage({ params }: { params: Promis
       {/* Breadcrumb section */}
       <div
         className="breadcumb-wrapper"
-        style={{ backgroundImage: "url('/main-assets/img/bg/breadcrumb-bg.png')" }}
+        style={{
+          backgroundImage:
+            "linear-gradient(135deg, rgba(234,85,1,0.55) 0%, rgba(21,22,28,0.75) 100%), url('/main-assets/img/bg/client-bg1-1.png')",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+        }}
       >
-        <div
-          className="section-animation-shape1-1 shape-mockup animation-infinite"
-          data-top="0"
-          style={{ backgroundImage: "url('/main-assets/img/shape/global-line-shape1.png')" }}
-        ></div>
         <div className="container">
           <div className="row">
             <div className="col-lg-12">

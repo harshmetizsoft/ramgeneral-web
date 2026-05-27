@@ -112,7 +112,7 @@ const FooterTwo = () => {
                         <div className="row gy-3 justify-content-md-between justify-content-center">
                             <div className="col-auto align-self-center">
                                 <p className="copyright-text text-center">
-                                    © 2024 <Link href="/">Ram General Supply</Link> | All rights reserved
+                                    © 2026 <Link href="/">Ram General Supply</Link> | All rights reserved
                                 </p>
                             </div>
                             <div className="col-auto">

@@ -13,9 +13,6 @@ const Hero = () => {
                 }}>
             </div>
             <div className="hero-shadow-text">RamGeneral</div>
-            <div className="hero-bg-shape3-1 shape-mockup jump" style={{ bottom: '3%', left: '3%', position: 'absolute' }}>
-                <img src="/main-assets/img/shape/sec-bg-shape2.png" alt="img" />
-            </div>
 
             <div className="container">
                 <div className="hero-style3">
