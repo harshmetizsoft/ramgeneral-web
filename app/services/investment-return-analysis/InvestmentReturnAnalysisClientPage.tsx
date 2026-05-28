@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { ServiceContactSidebar } from "@/components/service-detail";
 
 const allServices = [
   { title: "Audit Services", slug: "audit-services", icon: "ri-survey-line" },
@@ -10,14 +11,6 @@ const allServices = [
   { title: "Installation Services", slug: "installation-services", icon: "ri-tools-line" },
   { title: "Investment Return Analysis", slug: "investment-return-analysis", icon: "ri-line-chart-line" },
   { title: "As A Service", slug: "as-a-service", icon: "ri-loop-left-line" }
-];
-
-const coreFeatures = [
-  "Detailed payback period and IRR calculations",
-  "Monthly cash flow positive energy models",
-  "HVAC heat-load reduction savings metrics",
-  "Maintenance labor and material savings estimates",
-  "Tax incentive eligibility (Section 179D, etc.)"
 ];
 
 const processSteps = [
@@ -282,21 +275,6 @@ export default function InvestmentReturnAnalysisClientPage() {
             {/* Right Column: Sidebar */}
             <div className="col-xl-4 col-12">
               <div className="space-y-6">
-                {/* Core Features list card */}
-                <div className="p-6 bg-gray-50 border rounded-3xl" style={{ borderRadius: "24px", borderColor: "rgba(0,0,0,0.05)" }}>
-                  <h4 className="font-title text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                    <i className="ri-list-check-3 text-orange-600"></i> Core Features
-                  </h4>
-                  <ul className="space-y-3 pl-0 list-none m-0">
-                    {coreFeatures.map((feature, idx) => (
-                      <li className="flex items-start gap-2" key={idx}>
-                        <i className="ri-checkbox-circle-fill text-emerald-500 text-lg shrink-0 mt-0.5"></i>
-                        <span className="text-gray-600 font-body text-sm leading-relaxed">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
                 {/* Sidebar Navigation */}
                 <div className="p-6 bg-white border rounded-3xl" style={{ borderRadius: "24px", borderColor: "rgba(0,0,0,0.05)" }}>
                   <h4 className="font-title text-xl font-bold text-gray-900 mb-4">All Services</h4>
@@ -325,22 +303,7 @@ export default function InvestmentReturnAnalysisClientPage() {
                   </div>
                 </div>
 
-                {/* Contact CTA Card */}
-                <div className="p-6 bg-gray-900 text-white rounded-3xl text-center relative overflow-hidden" style={{ borderRadius: "24px" }}>
-                  <div className="relative z-10">
-                    <h4 className="font-title text-2xl font-bold mb-3">Ready to Upgrade?</h4>
-                    <p className="text-gray-300 text-xs mb-4">
-                      Get a free ROI analysis and rebate assessment for your lighting project.
-                    </p>
-                    <Link
-                      href="/contact"
-                      className="btn w-100 style3 text-center py-3 block text-white font-bold"
-                      style={{ background: "var(--color-theme)", border: "none" }}
-                    >
-                      REQUEST CALL <i className="ri-arrow-right-up-line"></i>
-                    </Link>
-                  </div>
-                </div>
+                <ServiceContactSidebar />
               </div>
             </div>
           </div>

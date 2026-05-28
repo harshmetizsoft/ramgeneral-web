@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { ServiceContactSidebar } from "@/components/service-detail";
 
 // Define the comprehensive service data
 const servicesData: Record<string, {
@@ -340,23 +341,6 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
                   </p>
                 </div>
 
-                {/* Core Features list card */}
-                <div className="p-6 bg-gray-50 border rounded-3xl" style={{ borderRadius: "24px", borderColor: "rgba(0,0,0,0.05)" }}>
-                  <h4 className="font-title text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                    <i className="ri-list-check-3 text-orange-600"></i> Core Features
-                  </h4>
-                  <ul className="space-y-3 pl-0 list-none m-0">
-                    {service.features.map((feature, idx) => (
-                      <li className="flex items-start gap-2" key={idx}>
-                        <i className="ri-checkbox-circle-fill text-emerald-500 text-lg shrink-0 mt-0.5"></i>
-                        <span className="text-gray-600 font-body text-sm leading-relaxed">
-                          {feature}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
                 {/* Sidebar Navigation */}
                 <div className="p-6 bg-white border rounded-3xl" style={{ borderRadius: "24px", borderColor: "rgba(0,0,0,0.05)" }}>
                   <h4 className="font-title text-xl font-bold text-gray-900 mb-4">
@@ -384,22 +368,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
                   </div>
                 </div>
 
-                {/* Contact Consultation Mini-Card */}
-                <div className="p-6 bg-gray-900 text-white rounded-3xl text-center relative overflow-hidden" style={{ borderRadius: "24px" }}>
-                  <div className="relative z-10">
-                    <h4 className="font-title text-2xl font-bold mb-3">Ready to Upgrade?</h4>
-                    <p className="text-gray-300 text-xs mb-4">
-                      Get a free audit valuation and rebate assessment for your facility setup.
-                    </p>
-                    <Link 
-                      href="/contact" 
-                      className="btn w-100 style3 text-center py-3 block text-white font-bold"
-                      style={{ background: "var(--color-theme)", border: "none" }}
-                    >
-                      REQUEST CALL <i className="ri-arrow-right-up-line"></i>
-                    </Link>
-                  </div>
-                </div>
+                <ServiceContactSidebar />
               </div>
             </div>
           </div>

@@ -1,12 +1,11 @@
 "use client";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { usePathname } from 'next/navigation';
 import MultiPageMobileMenu from "../MultiPageMobileMenu/MultiPageMobileMenu";
 
 const HeaderTwo = ({ menuData = [] }: { menuData?: any[] }) => {
     const [isSticky, setIsSticky] = useState(false);
-    const [isPopupOpen, setIsPopupOpen] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const pathname = usePathname();
 
@@ -36,26 +35,12 @@ const HeaderTwo = ({ menuData = [] }: { menuData?: any[] }) => {
         };
     }, []);
 
-    const handleSearchPopupOpen = () => {
-        setIsPopupOpen(true);
-    }
-    const handleSearchPopupClose = () => {
-        setIsPopupOpen(false);
-    }
-
     const handleMobileMenuOpen = () => {
         setIsMenuOpen(true);
     }
 
     return (
         <div>
-            <div className={`popup-search-box ${isPopupOpen ? 'show' : ''}`}>
-                <button onClick={handleSearchPopupClose} className="searchClose"><i className="ri-close-line"></i></button>
-                <form action="#">
-                    <input type="text" placeholder="Search Here.." />
-                    <button type="submit"><i className="ri-search-line"></i></button>
-                </form>
-            </div>
             <MultiPageMobileMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} menuData={menuData}></MultiPageMobileMenu>
             <header className="nav-header header-layout3">
                 <div className={`sticky-wrapper ${isSticky ? 'sticky' : ''}`}>
@@ -147,9 +132,6 @@ const HeaderTwo = ({ menuData = [] }: { menuData?: any[] }) => {
                                             </div>
                                         </div>
                                         <Link href="/about" className="btn d-xxl-flex d-none">GET IN TOUCH <i className="ri-arrow-right-up-line"></i></Link>
-                                        <button onClick={handleSearchPopupOpen} type="button" className="search-btn searchBoxToggler simple-icon">
-                                            <i className="ri-search-line"></i>
-                                        </button>
                                         <button onClick={() => { }} type="button" className="sidebar-btn sideMenuToggler simple-icon" style={{ display: 'none' }}>
                                             <i className="ri-grid-fill"></i>
                                         </button>

@@ -9,7 +9,9 @@ export const metadata = {
 
 const rebateSteps = [
   {
+    number: "01",
     step: "Step 1",
+    icon: "ri-survey-line",
     title: "Comprehensive Energy Assessment",
     intro:
       "Our expert team conducts a detailed evaluation of your current lighting infrastructure, identifying precise opportunities for LED upgrades and rebate potential. We analyse:",
@@ -21,7 +23,9 @@ const rebateSteps = [
     ],
   },
   {
+    number: "02",
     step: "Step 2",
+    icon: "ri-coupon-3-line",
     title: "Targeted Rebate Identification",
     intro: "We meticulously map out all available rebate opportunities across:",
     bullets: [
@@ -32,7 +36,9 @@ const rebateSteps = [
     ],
   },
   {
+    number: "03",
     step: "Step 3",
+    icon: "ri-lightbulb-flash-line",
     title: "Customized Incentive Strategy",
     intro: "Our specialists develop a tailored rebate strategy that:",
     bullets: [
@@ -43,7 +49,9 @@ const rebateSteps = [
     ],
   },
   {
+    number: "04",
     step: "Step 4",
+    icon: "ri-file-list-3-line",
     title: "Documentation and Preparation",
     intro: "We handle the complex paperwork, ensuring:",
     bullets: [
@@ -54,7 +62,9 @@ const rebateSteps = [
     ],
   },
   {
+    number: "05",
     step: "Step 5",
+    icon: "ri-send-plane-fill",
     title: "Submission and Tracking",
     intro: "Our dedicated team manages:",
     bullets: [
@@ -164,33 +174,32 @@ export default function RebatesIncentivesPage() {
             </p>
           </div>
 
-          <div className="row g-4">
+          <div className="rebate-roadmap">
             {rebateSteps.map((item, idx) => (
-              <div className="col-lg-6 col-12" key={idx}>
-                <div
-                  className="p-5 h-100 bg-white border rounded-3xl"
-                  style={{ borderRadius: "20px", borderColor: "rgba(0,0,0,0.06)" }}
-                >
-                  <span
-                    className="inline-block text-sm font-bold tracking-wider uppercase mb-3 px-3 py-1 rounded-full"
-                    style={{ background: "rgba(234, 85, 1, 0.1)", color: "var(--color-theme)" }}
-                  >
-                    {item.step}
+              <article className="rebate-roadmap__step" key={item.number}>
+                <div className="rebate-roadmap__track" aria-hidden="true">
+                  <span className="rebate-roadmap__dot">
+                    <i className={item.icon}></i>
                   </span>
-                  <h3 className="font-title text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
-                  <p className="font-body text-gray-600 text-sm leading-relaxed mb-3">
-                    {item.intro}
-                  </p>
-                  <ul className="pl-0 list-none m-0 space-y-2">
+                  {idx < rebateSteps.length - 1 && <span className="rebate-roadmap__connector" />}
+                </div>
+                <div className="rebate-roadmap__card">
+                  <div className="rebate-roadmap__card-head">
+                    <span className="rebate-roadmap__number">{item.number}</span>
+                    <span className="rebate-roadmap__badge">{item.step}</span>
+                  </div>
+                  <h3 className="rebate-roadmap__title">{item.title}</h3>
+                  <p className="rebate-roadmap__intro">{item.intro}</p>
+                  <ul className="rebate-roadmap__list">
                     {item.bullets.map((bullet, bulletIdx) => (
-                      <li className="flex items-start gap-2" key={bulletIdx}>
-                        <i className="ri-checkbox-circle-fill text-emerald-500 shrink-0 mt-0.5"></i>
-                        <span className="text-gray-700 font-body text-sm">{bullet}</span>
+                      <li key={bulletIdx}>
+                        <i className="ri-checkbox-circle-fill" aria-hidden="true"></i>
+                        <span>{bullet}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </div>
@@ -205,8 +214,8 @@ export default function RebatesIncentivesPage() {
               background: "linear-gradient(135deg, #293241 0%, #1d3557 100%)",
             }}
           >
-            <div className="row align-items-center gx-40">
-              <div className="col-lg-8 col-12">
+            <div className="row">
+              <div className="col-12">
                 <h2 className="font-title text-3xl font-bold text-white mb-4">
                   Secure Your Savings Before Time Runs Out
                 </h2>
@@ -219,20 +228,6 @@ export default function RebatesIncentivesPage() {
                   paperwork to installation. Don&apos;t miss the chance to enhance your lighting,
                   lower your carbon footprint, and boost your bottom line—act now to secure your
                   savings and future-proof your business.
-                </p>
-              </div>
-              <div className="col-lg-4 col-12 mt-4 mt-lg-0 text-lg-end">
-                <Link
-                  href="/contact"
-                  className="btn style3 text-white font-bold py-3 px-5 inline-flex items-center gap-2"
-                  style={{ background: "var(--color-theme)", border: "none" }}
-                >
-                  GET STARTED <i className="ri-arrow-right-up-line"></i>
-                </Link>
-                <p className="text-gray-300 text-sm mt-3 mb-0">
-                  <Link href="tel:+18443245726" className="text-gray-200 hover:text-white">
-                    +1 844-324-5726
-                  </Link>
                 </p>
               </div>
             </div>

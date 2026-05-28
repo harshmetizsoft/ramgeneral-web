@@ -1,6 +1,5 @@
 import About from "~/sections/home/About";
 import CTA from "~/sections/home/CTA";
-import Client from "~/sections/home/Client";
 import Contact from "~/sections/home/Contact";
 import Counter from "~/sections/home/Counter";
 import Hero from "~/sections/home/Hero";
@@ -21,7 +20,6 @@ export default function HomePage() {
             <Counter />
             <Contact />
             <Testimonial />
-            <Client />
             <CTA />
             <Scroll />
         </div>
