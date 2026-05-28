@@ -17,8 +17,10 @@ export const metadata = {
   },
 };
 import "./globals.css";
+import "./product-chat.css";
 import HeaderTwo from "~/sections/shared/Header/HeaderTwo";
 import FooterTwo from "~/sections/shared/Footer/FooterTwo";
+import { ProductChatWidget } from "~/components/product-chat";
 import { createClient } from "~/prismicio";
 
 export default async function RootLayout({
@@ -66,6 +68,7 @@ export default async function RootLayout({
         <HeaderTwo menuData={menuData} />
         {children}
         <FooterTwo />
+        <ProductChatWidget />
       </body>
     </html>
   );
