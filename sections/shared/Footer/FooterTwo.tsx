@@ -14,22 +14,6 @@ const FooterTwo = () => {
                                 <img src="/logo.png" alt="RAM General" width={180} height={70} style={{ filter: 'brightness(0) invert(1)' }} />
                             </Link>
                         </div>
-                        <div className="subscribe-box">
-                            <p className="subscribe-box_text">
-                                Subscribe for the latest news. Stay updated on the latest trends.
-                            </p>
-                            <form className="newsletter-form">
-                                <input
-                                    className="form-control"
-                                    type="email"
-                                    placeholder="Enter your email..."
-                                    required
-                                />
-                                <button type="submit" className="btn style2">
-                                    SUBSCRIBE<i className="ri-arrow-right-up-line"></i>
-                                </button>
-                            </form>
-                        </div>
                     </div>
                     <div className="widget-area">
                         <div className="row justify-content-between">
