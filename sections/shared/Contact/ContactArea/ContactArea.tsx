@@ -1,105 +1,48 @@
 import Link from "next/link";
 
+const contactItems = [
+  {
+    label: "Office Address",
+    value: "245 East 17th Street, Paterson, NJ 07524",
+    icon: "ri-map-pin-line",
+    href: null as string | null,
+  },
+  {
+    label: "Mobile Number",
+    value: "+1 844-324-5726",
+    icon: "ri-phone-line",
+    href: "tel:+18443245726",
+  },
+  {
+    label: "Email",
+    value: "info@ramgeneralsupply.com",
+    icon: "ri-mail-line",
+    href: "mailto:info@ramgeneralsupply.com",
+  },
+];
+
 const ContactArea = () => {
   return (
     <section className="contact-page-area space">
       <div className="container">
         <div className="row gy-4 justify-content-center">
-          <div className="col-md-6 col-lg-4">
-            <div className="contact-page-card bg-smoke">
-              <div className="contact-page-card-details">
-                <h4 className="contact-page-card_title">Main Office</h4>
-                <div className="contact-page-card-text">
-                  <i className="ri-phone-line"></i>
-                  <Link
-                    className="contact-page-card_link"
-                    href="tel:0022730240369"
-                  >
-                    +00 (22) 730 240 369
+          {contactItems.map((item) => (
+            <div className="col-md-6 col-lg-4" key={item.label}>
+              <div className="contact-info-box">
+                <span className="contact-info-box__icon">
+                  <i className={item.icon} aria-hidden="true"></i>
+                </span>
+                <h4 className="contact-info-box__label">{item.label}</h4>
+                {item.href ? (
+                  <Link href={item.href} className="contact-info-box__value">
+                    {item.value}
                   </Link>
-                </div>
-                <div className="contact-page-card-text">
-                  <i className="ri-mail-line"></i>
-                  <Link
-                    className="contact-page-card_link"
-                    href="mailto:construz.info@gmail.com"
-                  >
-                    construz.info@gmail.com
-                  </Link>
-                </div>
-                <div className="contact-page-card-text">
-                  <i className="ri-time-line"></i>Mon - Sat 10.00 - 18.00
-                </div>
-              </div>
-              <div className="contact-page-card-thumb">
-                <img src="/main-assets/img/normal/contact_page1-1.png" alt="img" />
+                ) : (
+                  <p className="contact-info-box__value">{item.value}</p>
+                )}
               </div>
             </div>
-          </div>
-
-          <div className="col-md-6 col-lg-4">
-            <div className="contact-page-card bg-smoke">
-              <div className="contact-page-card-details">
-                <h4 className="contact-page-card_title">London Office</h4>
-                <div className="contact-page-card-text">
-                  <i className="ri-phone-line"></i>
-                  <Link
-                    className="contact-page-card_link"
-                    href="tel:0022730240369"
-                  >
-                    +32 (0) 800 240 458
-                  </Link>
-                </div>
-                <div className="contact-page-card-text">
-                  <i className="ri-mail-line"></i>
-                  <Link
-                    className="contact-page-card_link"
-                    href="mailto:construz.info@gmail.com"
-                  >
-                    construz.info@gmail.com
-                  </Link>
-                </div>
-                <div className="contact-page-card-text">
-                  <i className="ri-time-line"></i>Mon - Sat 12.00 - 20.00
-                </div>
-              </div>
-              <div className="contact-page-card-thumb">
-                <img src="/main-assets/img/normal/contact_page1-2.png" alt="img" />
-              </div>
-            </div>
-          </div>
-
-          <div className="col-md-6 col-lg-4">
-            <div className="contact-page-card bg-smoke">
-              <div className="contact-page-card-details">
-                <h4 className="contact-page-card_title">New York City</h4>
-                <div className="contact-page-card-text">
-                  <i className="ri-phone-line"></i>
-                  <Link
-                    className="contact-page-card_link"
-                    href="tel:0022730240369"
-                  >
-                    +32 (0) 800 240 458
-                  </Link>
-                </div>
-                <div className="contact-page-card-text">
-                  <i className="ri-mail-line"></i>
-                  <Link
-                    className="contact-page-card_link"
-                    href="mailto:construz.info@gmail.com"
-                  >
-                    construz.info@gmail.com
-                  </Link>
-                </div>
-                <div className="contact-page-card-text">
-                  <i className="ri-time-line"></i>Mon - Sat 08.00 - 16.00
-                </div>
-              </div>
-              <div className="contact-page-card-thumb">
-                <img src="/main-assets/img/normal/contact_page1-3.png" alt="img" />
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
@@ -107,4 +50,3 @@ const ContactArea = () => {
 };
 
 export default ContactArea;
-

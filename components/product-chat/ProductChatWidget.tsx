@@ -12,11 +12,7 @@ interface ChatMessage {
   products?: ChatProductResult[];
 }
 
-const SUGGESTIONS = [
-  "Find commercial LED fixtures",
-  "Search products by SKU",
-  "High bay lighting options",
-];
+const SUGGESTIONS = ["Lights"];
 
 const WELCOME_MESSAGE =
   "Welcome to RAM General Supply. I can search our commercial LED catalog by product name, category, or SKU and share specs and pricing when available. What lighting solution are you looking for today?";
